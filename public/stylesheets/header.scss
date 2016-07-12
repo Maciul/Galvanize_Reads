@@ -1,0 +1,13 @@
+header {
+  background-color: $dark-blue;
+  display: flex;
+  align-items: center;
+  img {
+    border: 2px solid black;
+    border-radius: 50%;
+    margin: 10px;
+  }
+}
+h1 {
+  display: inline;
+}
