@@ -5,9 +5,12 @@ var api = require('../db/api');
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   api.listBooks().then(function(books) {
-    console.log(books);
     res.render('list-books', {books: books});
   });
+});
+
+router.get('/add', function(req, res, next) {
+  res.render('add-book');
 });
 
 module.exports = router;
