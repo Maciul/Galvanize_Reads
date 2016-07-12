@@ -10,6 +10,11 @@ p {
   @include body-font;
 }
 
+input, textarea, label {
+  display: block;
+  margin: 10px;
+}
+
 .list {
   h2 {
     display: flex;

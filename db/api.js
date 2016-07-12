@@ -7,8 +7,8 @@ module.exports = {
     return knex('book').select();
   },
 
-  addBook: function(staff) {
-    return knex('book').insert(staff);
+  addBook: function(book) {
+    return knex('book').insert(book);
   },
 
   getStaff: function(id) {

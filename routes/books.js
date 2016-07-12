@@ -13,4 +13,16 @@ router.get('/add', function(req, res, next) {
   res.render('add-book');
 });
 
+router.post('/', function(request, response, next) {
+  var book = {
+    title: request.body.title,
+    genre: request.body.genre,
+    description: request.body.description,
+    coverURL: request.body.coverURL
+  };
+  api.addBook(book).then(function(book) {
+    response.redirect('/books');
+  });
+});
+
 module.exports = router;
