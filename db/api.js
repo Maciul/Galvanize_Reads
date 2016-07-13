@@ -40,4 +40,8 @@ module.exports = {
   deleteAuthor: function(id) {
     return knex('author').where({ id: id }).del();
   },
+
+  editAuthor: function(id, author) {
+    return knex('author').where({id: id}).update(author);
+  },
 };

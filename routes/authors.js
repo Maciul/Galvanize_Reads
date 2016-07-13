@@ -9,6 +9,13 @@ router.get('/', function(req, res, next) {
   });
 });
 
+// Detail
+router.get('/detail/:id', function(req, res, next) {
+  api.getAuthor(req.params.id).then(function(author) {
+  res.render('detail-author', {author: author});
+  });
+});
+
 // ADD Book
 
 router.get('/add', function(req, res, next) {
@@ -41,6 +48,24 @@ router.get('/delete/:id/end', function(req, res, next) {
   });
 });
 
+//EDIT book
 
+router.get('/edit/:id', function(req, res, next) {
+  api.getAuthor(req.params.id).then(function(author) {
+    res.render('edit-author', {author: author});
+  });
+});
+
+router.post('/edit/:id', function(request, response, next) {
+  var author = {
+    first_name: request.body.first_name,
+    last_name: request.body.last_name,
+    bio: request.body.bio,
+    portrait: request.body.portrait
+  };
+  api.editAuthor(request.params.id, author).then(function() {
+    response.redirect('/authors');
+  });
+});
 
 module.exports = router;

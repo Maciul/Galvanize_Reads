@@ -13,9 +13,6 @@ main {
   display: flex;
   justify-content: space-around; }
 
-.mainLink {
-  margin-top: 20%; }
-
 h1 {
   font-family: 'Katibeh', cursive;
   font-size: 2rem;
