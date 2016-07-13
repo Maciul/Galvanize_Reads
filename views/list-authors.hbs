@@ -5,9 +5,8 @@
 <section class='list'>
 {{#each authors}}
 <div>
-<h2><img src={{portrait}} height='75px' width='75px' alt='cover'>
-  <a href='/authors/detail/{{id}}'>{{title}}</a></h2>
-<h3>{{first_name}} {{last_name}}</h3>
+<img src={{portrait}} height='75px' width='75px' alt='cover'>
+<h3><a href='/authors/detail/{{id}}'>{{first_name}} {{last_name}}</a></h3>
 <p> {{bio}} </p>
 <p> <a href='/authors/delete/{{id}}'>DELETE</a></p>
 <p> <a href='/authors/edit/{{id}}'>EDIT</a></p>
