@@ -3,7 +3,8 @@
 
 <section class='list'>
 {{#each books}}
-<h2><img src={{coverURL}} height='75px' width='75px' alt='cover'>{{title}}</h2>
+<h2><img src={{coverURL}} height='75px' width='75px' alt='cover'>
+  <a href='/books/detail/{{id}}'>{{title}}</a></h2>
 <h3>Genre: {{genre}}</h3>
 <p> {{description}} </p>
 <p> <a href='/books/delete/{{id}}'>DELETE</a></p>

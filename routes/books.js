@@ -2,10 +2,17 @@ var express = require('express');
 var router = express.Router();
 var api = require('../db/api');
 
-/* GET users listing. */
+// Show list of books
 router.get('/', function(req, res, next) {
   api.listBooks().then(function(books) {
     res.render('list-books', {books: books});
+  });
+});
+
+// Detail
+router.get('/detail/:id', function(req, res, next) {
+  api.getBook(req.params.id).then(function(book) {
+  res.render('detail-book', {book: book});
   });
 });
 
@@ -56,8 +63,6 @@ router.post('/edit/:id', function(request, response, next) {
     description: request.body.description,
     coverURL: request.body.coverURL
   };
-  console.log(request.params.id);
-  console.log(book)
   api.editBook(request.params.id, book).then(function() {
     response.redirect('/books');
   });

@@ -25,8 +25,8 @@ module.exports = {
 
   // Cohort functions
 
-  listCohorts: function() {
-    return knex('cohort').select();
+  listAuthors: function() {
+    return knex('author').select();
   },
 
   addCohorts: function(cohort) {
