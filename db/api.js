@@ -11,12 +11,12 @@ module.exports = {
     return knex('book').insert(book);
   },
 
-  getStaff: function(id) {
-    return knex('staff').where({ id: id }).select().first();
+  getBook: function(id) {
+    return knex('book').where({ id: id }).select().first();
   },
 
-  removeStaff: function(id) {
-    return knex('staff').where({ id: id }).del();
+  deleteBook: function(id) {
+    return knex('book').where({ id: id }).del();
   },
 
   // Cohort functions
