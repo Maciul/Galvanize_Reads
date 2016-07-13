@@ -33,11 +33,11 @@ module.exports = {
     return knex('author').insert(author);
   },
 
-  getCohorts: function(id) {
-    return knex('cohort').where({ id: id }).select().first();
+  getAuthor: function(id) {
+    return knex('author').where({ id: id }).select().first();
   },
 
-  removeCohorts: function(id) {
-    return knex('cohort').where({ id: id }).del();
+  deleteAuthor: function(id) {
+    return knex('author').where({ id: id }).del();
   },
 };

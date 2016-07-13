@@ -30,14 +30,14 @@ router.post('/', function(request, response, next) {
 //DELETE book
 
 router.get('/delete/:id', function(req, res, next) {
-  api.getBook(req.params.id).then(function(book) {
-  res.render('delete-book', {book: book});
+  api.getAuthor(req.params.id).then(function(author) {
+  res.render('delete-author', {author: author});
   });
 });
 
 router.get('/delete/:id/end', function(req, res, next) {
-  api.deleteBook(req.params.id).then(function() {
-  res.redirect('/books');
+  api.deleteAuthor(req.params.id).then(function() {
+  res.redirect('/authors');
   });
 });
 
