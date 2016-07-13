@@ -1,3 +1,14 @@
+body {
+  margin: 0px;
+}
+
+main {
+  margin-left: 15%;
+}
+.main-page {
+  display: flex;
+  justify-content: space-around;
+}
 h1 {
   @include primary-header-font;
 }

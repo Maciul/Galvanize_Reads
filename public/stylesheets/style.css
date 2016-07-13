@@ -1,4 +1,14 @@
 @import 'https://fonts.googleapis.com/css?family=Galada|Katibeh|Raleway';
+body {
+  margin: 0px; }
+
+main {
+  margin-left: 15%; }
+
+.main-page {
+  display: flex;
+  justify-content: space-around; }
+
 h1 {
   font-family: 'Katibeh', cursive;
   font-size: 2rem;
@@ -27,10 +37,37 @@ input, textarea, label {
   margin: 0 15px;
   border: 2px solid black; }
 
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0;
+  width: 15%;
+  height: 100vh;
+  /* Full height */
+  position: fixed;
+  /* Make it stick, even on scroll */
+  overflow: auto;
+  /* Enable scrolling if the sidenav has too much content */ }
+
+li a {
+  display: block;
+  color: #1B1B1B;
+  text-align: center;
+  text-decoration: none; }
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111; }
+
 header {
   background-color: #191970;
   display: flex;
-  align-items: center; }
+  align-items: center;
+  margin-bottom: 30px;
+  width: 100%;
+  position: fixed; }
   header h1 {
     color: #F8F8FF; }
   header img {
