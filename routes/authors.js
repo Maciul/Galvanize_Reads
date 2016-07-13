@@ -9,6 +9,24 @@ router.get('/', function(req, res, next) {
   });
 });
 
+// ADD Book
+
+router.get('/add', function(req, res, next) {
+  res.render('add-author');
+});
+
+router.post('/', function(request, response, next) {
+  var author = {
+    first_name: request.body.first_name,
+    last_name: request.body.last_name,
+    bio: request.body.bio,
+    portrait: request.body.portrait
+  };
+  api.addAuthor(author).then(function(author) {
+    response.redirect('/authors');
+  });
+});
+
 //DELETE book
 
 router.get('/delete/:id', function(req, res, next) {

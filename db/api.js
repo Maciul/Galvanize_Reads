@@ -29,8 +29,8 @@ module.exports = {
     return knex('author').select();
   },
 
-  addCohorts: function(cohort) {
-    return knex('cohort').insert(cohort);
+  addAuthor: function(author) {
+    return knex('author').insert(author);
   },
 
   getCohorts: function(id) {

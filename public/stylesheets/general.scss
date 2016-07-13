@@ -3,11 +3,20 @@ body {
 }
 
 main {
+  display: block;
+  position: absolute;
+  margin-top: 15%;
   margin-left: 15%;
+  z-index: -1;
+
 }
 .main-page {
   display: flex;
   justify-content: space-around;
+}
+
+.mainLink {
+  margin-top: 20%;
 }
 h1 {
   @include primary-header-font;
