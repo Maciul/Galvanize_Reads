@@ -19,6 +19,10 @@ module.exports = {
     return knex('book').where({ id: id }).del();
   },
 
+  editBook: function(id, book) {
+    return knex('book').where({id: id}).update(book);
+  },
+
   // Cohort functions
 
   listCohorts: function() {

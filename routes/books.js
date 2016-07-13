@@ -49,14 +49,16 @@ router.get('/edit/:id', function(req, res, next) {
   });
 });
 
-router.post('/edit', function(request, response, next) {
+router.post('/edit/:id', function(request, response, next) {
   var book = {
     title: request.body.title,
     genre: request.body.genre,
     description: request.body.description,
     coverURL: request.body.coverURL
   };
-  api.addBook(book).then(function(book) {
+  console.log(request.params.id);
+  console.log(book)
+  api.editBook(request.params.id, book).then(function() {
     response.redirect('/books');
   });
 });

@@ -2,7 +2,7 @@
 
 <section>
   <h2>Add Book</h2>
-  <form action="/books/edit" method="POST">
+  <form action="/books/edit/{{book.id}}" method="POST">
     <label for="title">Book Title</label>
     <input name='title' type='text' id='title' value='{{book.title}}'>
 
