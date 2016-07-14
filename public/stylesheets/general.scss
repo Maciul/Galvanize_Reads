@@ -15,6 +15,13 @@ main {
   justify-content: space-around;
 }
 
+.author_pic {
+  float:left;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  border: 1px solid $black;
+}
+
 h1 {
   @include primary-header-font;
 }
@@ -27,6 +34,14 @@ p {
   @include body-font;
 }
 
+a {
+  text-decoration: none;
+  color: $black;
+  &:hover {
+    color: $galvanize-primary
+  }
+}
+
 input, textarea, label {
   display: block;
   margin: 10px;
@@ -36,9 +51,5 @@ input, textarea, label {
   h2 {
     display: flex;
     align-items: inherit;
-  }
-  img {
-    margin: 0 15px;
-    border: 2px solid black;
   }
 }

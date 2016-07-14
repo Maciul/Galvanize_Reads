@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var api = require('../db/api');
+var knex = require('../db/knex');
 
 // Show list of books
 router.get('/', function(req, res, next) {
@@ -67,5 +68,19 @@ router.post('/edit/:id', function(request, response, next) {
     response.redirect('/books');
   });
 });
+
+router.get('/test', function(req, res, next) {
+  return Promise.all([
+  knex('book').select('book.id', 'book.title'),
+  knex('book').distinct('book.id').select()
+  .join('book_author', 'book.id', 'book_author.book_id').select()
+  .join('author', 'author.id', 'book_author.author_id').select('author.first_name', 'author.last_name')
+
+]).then(function(data){
+    console.log(data);
+    res.render('test', {data: data});
+    })
+  });
+
 
 module.exports = router;
