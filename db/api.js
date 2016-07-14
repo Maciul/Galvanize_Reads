@@ -44,4 +44,14 @@ module.exports = {
   editAuthor: function(id, author) {
     return knex('author').where({id: id}).update(author);
   },
+
+  getBookAuthors: function(id) {
+    return Promise.all([
+    knex('book').select().where({id: id}).first(),
+    knex('book').select()
+    .join('book_author', 'book.id', 'book_author.book_id').select()
+    .join('author', 'author.id', 'book_author.author_id').select('author.id','author.first_name', 'author.last_name')
+    .where({id: id})
+  ]);
+  }
 };

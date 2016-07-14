@@ -1,6 +1,11 @@
 <div>
-<h1>{{book.title}}</h1>
-<img class='cover_pic2' src={{book.coverURL}} alt='cover'>
-<p>{{book.description}}</p>
-<h2>Authors:</h2>
+  <img class='cover_pic2' src={{book.coverURL}} alt='cover'>
+    <h1>{{book.title}}</h1>
+    <p>{{book.description}}</p>
+    <h2>Authors:</h2>
+    <div>
+    {{#each author}}
+      <a class='linkP' href="/authors/detail/{{id}}"<p>{{first_name}} {{last_name}}</p></a>
+    {{/each}}
+  </div>
 </div>

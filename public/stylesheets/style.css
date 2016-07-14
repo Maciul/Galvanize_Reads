@@ -25,6 +25,11 @@ p {
   font-size: 1rem;
   font-weight: 400; }
 
+.linkP {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1rem;
+  font-weight: 400; }
+
 h1, h2, h3, h4, h5, h6 {
   margin: 0px; }
 
@@ -114,6 +119,8 @@ input, textarea, label {
   .list h2 {
     display: flex;
     align-items: inherit; }
+  .list p {
+    margin: 0px; }
 
 .main_div {
   margin-bottom: 50px; }
