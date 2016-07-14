@@ -13,11 +13,11 @@ router.get('/', function(req, res, next) {
 // Detail
 router.get('/detail/:id', function(req, res, next) {
   return Promise.all([
-  knex('book').select().where('id', req.params.id).first(),
-  knex('book').select()
-  .join('book_author', 'book.id', 'book_author.book_id').select()
-  .join('author', 'author.id', 'book_author.author_id').select('author.id','author.first_name', 'author.last_name')
-  .where('book.id', req.params.id)
+    knex('book').select().where('id', req.params.id).first(),
+    knex('book').select()
+      .join('book_author', 'book.id', 'book_author.book_id').select()
+      .join('author', 'author.id', 'book_author.author_id').select('author.id','author.first_name', 'author.last_name')
+      .where('book.id', req.params.id)
   ]).then(function(data){
     res.render('detail-book', {book: data[0], author: data[1]});
   });
@@ -74,18 +74,5 @@ router.post('/edit/:id', function(request, response, next) {
     response.redirect('/books');
   });
 });
-
-router.get('/test', function(req, res, next) {
-  return Promise.all([
-  knex('book').select().where('id', 1).first(),
-  knex('book').select()
-  .join('book_author', 'book.id', 'book_author.book_id').select()
-  .join('author', 'author.id', 'book_author.author_id').select('author.id','author.first_name', 'author.last_name')
-  .where('book.id', 1)
-]).then(function(data){
-    res.render('test', {book: data[0], author: data[1]});
-  });
-  });
-
 
 module.exports = router;
