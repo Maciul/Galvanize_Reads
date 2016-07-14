@@ -1,15 +1,28 @@
 
-<h1> List of Authors </h1>
-<h2> <a href="/authors/add">Add Author </a></h2>
+<h1>Authors </h1>
+
 
 <section class='list'>
 {{#each authors}}
-<div>
-<img class='author_pic' src={{portrait}} height='150px' width='150px' alt='cover'>
-<h3><a href='/authors/detail/{{id}}'>{{first_name}} {{last_name}}</a></h3>
-<p> {{bio}} </p>
-<p> <a href='/authors/delete/{{id}}'>DELETE</a></p>
-<p> <a href='/authors/edit/{{id}}'>EDIT</a></p>
+<div class='main_div'>
+  <img class='author_pic' src={{portrait}} alt='cover'>
+  <div class='book_title'>
+    <div>
+      <h2>
+        <a href='/authors/detail/{{id}}'>{{first_name}} {{last_name}}</a>
+      </h2>
+      <p> {{bio}} </p>
+    </div>
+    <div class='list_icons'>
+      <a href='/authors/delete/{{id}}'>
+        <i class='fa fa-remove'></i>
+      </a>
+      <a href='/authors/edit/{{id}}'>
+      <i class="fa fa-pencil-square-o"></i>
+      </a>
+    </div>
+  </div>
 </div>
 {{/each}}
+<a href="/authors/add"><button class='new'>Add Author</button></a>
 </section>

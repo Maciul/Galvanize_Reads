@@ -2,7 +2,6 @@ header {
   background-color: $dark-blue;
   display: flex;
   align-items: center;
-  margin-bottom: 30px;
   width: 100%;
   position: fixed;
   h1 {
@@ -12,6 +11,10 @@ header {
     border: 2px solid black;
     border-radius: 50%;
     margin: 10px;
+  }
+  a {
+    display: flex;
+    align-items: center;
   }
 }
 h1 {

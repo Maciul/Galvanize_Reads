@@ -1,8 +1,4 @@
-<h1> Delete this book??? </h1>
-
-
-<h1>{{book.title}}</h1>
-<img src={{book.coverURL}} alt='cover'>
-<p>{{book.description}}</p>
-
-<a href='/books/delete/{{book.id}}/end'> DELETE {{book.title}}</a>
+<div class='delete'>
+<h1> Delete {{book.title}} </h1>
+<a href='/books/delete/{{book.id}}/end'><button class='new'> DELETE {{book.title}}</button></a>
+</div>

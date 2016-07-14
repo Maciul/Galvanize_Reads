@@ -1,4 +1,4 @@
-<h1> Edit {{author.last_name}} </h1>
+<h1> Edit: {{author.last_name}} </h1>
 
 <section>
   <form action="/authors/edit/{{author.id}}" method="POST">
@@ -14,6 +14,6 @@
     <label for="portrait">Picture URL</label>
     <input name='portrait' type='url' id='portrait' value='{{author.portrait}}'>
 
-    <input type="submit" value="Submit">
+    <input class='new' type="submit" value="Submit">
   </form>
 </section>
